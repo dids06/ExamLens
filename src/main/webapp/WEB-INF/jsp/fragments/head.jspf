@@ -1,0 +1,24 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
+<c:set var="theme" value="${empty currentUser ? 'system' : currentUser.theme}" />
+<!DOCTYPE html>
+<html lang="en" data-theme="${theme}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="app-context" content="${ctx}">
+    <meta name="csrf-token" content="${csrfToken}">
+    <title><c:choose><c:when test="${empty pageTitle}">ExamLens</c:when><c:otherwise>${pageTitle} · ExamLens</c:otherwise></c:choose></title>
+    <link rel="stylesheet" href="${ctx}/assets/css/app.css">
+    <link rel="icon" href="${ctx}/assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="app">
+    <c:if test="${not empty currentUser}"><%@ include file="sidebar.jspf" %></c:if>
+    <div class="app-main">
+        <c:if test="${not empty currentUser}"><%@ include file="topbar.jspf" %></c:if>
+        <main class="content ${empty currentUser ? 'content--centered' : ''}">
+            <%@ include file="flash.jspf" %>

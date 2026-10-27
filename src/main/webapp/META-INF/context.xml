@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+  <!-- Lax SameSite cookies keep session-based auth usable while limiting cross-site POSTs.
+       CSRF tokens are additionally required for every state-changing request. -->
+  <CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor"
+                   sameSiteCookies="lax" />
+  <JarScanner scanAllDirectories="false" />
+</Context>

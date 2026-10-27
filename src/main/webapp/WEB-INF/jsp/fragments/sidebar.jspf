@@ -1,0 +1,91 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+<c:set var="navPath" value="${fn:substringAfter(pageContext.request.requestURI, ctx)}" />
+<aside class="sidebar" id="app-sidebar" aria-label="Primary">
+    <a class="sidebar__brand" href="${ctx}/dashboard">
+        <span class="brand-mark" aria-hidden="true">EL</span>
+        <span>ExamLens</span>
+    </a>
+    <nav class="sidebar__nav">
+        <div class="nav-section">Overview</div>
+        <a class="nav-item ${fn:startsWith(navPath, '/dashboard') ? 'is-active' : ''}" href="${ctx}/dashboard">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            <span>Dashboard</span>
+        </a>
+        <a class="nav-item ${fn:startsWith(navPath, '/exams') ? 'is-active' : ''}" href="${ctx}/exams">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8a2 2 0 0 1 2 2v14l-6-3-6 3V5a2 2 0 0 1 2-2z"/></svg>
+            <span>Exams</span>
+        </a>
+
+        <div class="nav-section">Prepare</div>
+        <a class="nav-item ${fn:startsWith(navPath, '/documents') ? 'is-active' : ''}" href="${ctx}/documents">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+            <span>Documents</span>
+        </a>
+        <a class="nav-item ${fn:startsWith(navPath, '/syllabus') ? 'is-active' : ''}" href="${ctx}/syllabus">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4" cy="6" r="1.4"/><circle cx="4" cy="12" r="1.4"/><circle cx="4" cy="18" r="1.4"/></svg>
+            <span>Syllabus</span>
+        </a>
+        <a class="nav-item ${fn:startsWith(navPath, '/guidance') ? 'is-active' : ''}" href="${ctx}/guidance">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>
+            <span>Teacher guidance</span>
+        </a>
+        <a class="nav-item ${fn:startsWith(navPath, '/materials') ? 'is-active' : ''}" href="${ctx}/materials">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>
+            <span>Materials</span>
+        </a>
+        <a class="nav-item ${fn:startsWith(navPath, '/pyq') ? 'is-active' : ''}" href="${ctx}/pyq">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v4H3zM5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/><path d="M10 14h4"/></svg>
+            <span>Previous papers</span>
+        </a>
+
+        <div class="nav-section">Study</div>
+        <a class="nav-item ${fn:startsWith(navPath, '/plan') ? 'is-active' : ''}" href="${ctx}/plan">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+            <span>Study plan</span>
+        </a>
+        <a class="nav-item ${fn:startsWith(navPath, '/practice') ? 'is-active' : ''}" href="${ctx}/practice">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+            <span>Practice</span>
+        </a>
+        <a class="nav-item ${fn:startsWith(navPath, '/revision') ? 'is-active' : ''}" href="${ctx}/revision">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+            <span>Revision</span>
+        </a>
+        <a class="nav-item ${fn:startsWith(navPath, '/sessions') ? 'is-active' : ''}" href="${ctx}/sessions">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span>Study sessions</span>
+        </a>
+        <a class="nav-item ${fn:startsWith(navPath, '/readiness') ? 'is-active' : ''}" href="${ctx}/readiness">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0"/><path d="m12 12 4-4"/><path d="M3 12h2M19 12h2"/></svg>
+            <span>Readiness</span>
+        </a>
+
+        <div class="nav-section">AI</div>
+        <a class="nav-item ${fn:startsWith(navPath, '/assistant') ? 'is-active' : ''}" href="${ctx}/assistant">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 7.5l2.1 2.1M17.7 14.4l2.1 2.1M3 12h3M18 12h3M4.2 16.5l2.1-2.1M17.7 9.6l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>AI assistant</span>
+        </a>
+        <a class="nav-item ${fn:startsWith(navPath, '/settings') ? 'is-active' : ''}" href="${ctx}/settings">
+            <svg class="nav-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+            <span>Settings</span>
+        </a>
+    </nav>
+    <div style="margin-top:auto;padding:1rem .9rem 1.2rem;border-top:1px solid var(--border);">
+        <c:choose>
+            <c:when test="${aiSimulated}">
+                <span class="badge badge--warn">AI: simulated</span>
+                <p class="small muted" style="margin:.4rem 0 0;">Results are produced by the built-in simulator, not a live model.</p>
+            </c:when>
+            <c:when test="${aiAvailable}">
+                <span class="badge badge--success">AI: connected</span>
+                <p class="small muted" style="margin:.4rem 0 0;">AI actions will call the configured provider.</p>
+            </c:when>
+            <c:otherwise>
+                <span class="badge badge--danger">AI: not configured</span>
+                <p class="small muted" style="margin:.4rem 0 0;">Set <code>GEMINI_API_KEY</code> to enable AI actions.</p>
+            </c:otherwise>
+        </c:choose>
+    </div>
+</aside>

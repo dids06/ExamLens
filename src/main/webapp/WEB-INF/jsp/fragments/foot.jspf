@@ -1,0 +1,7 @@
+        </main>
+    </div>
+</div>
+<div class="drawer-backdrop" data-drawer-close></div>
+<script src="${ctx}/assets/js/app.js" defer></script>
+</body>
+</html>

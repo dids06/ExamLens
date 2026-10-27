@@ -1,0 +1,4 @@
+# Ordered migration files. Append new files; never rewrite an applied migration.
+001_core_schema.sql
+002_ai_and_planning.sql
+003_practice_and_learning.sql
